@@ -61,11 +61,11 @@ async def receive_block(request: Request) -> None:
 
     blockchain = Blockchain(block)
     blockchains.append(blockchain)
+    transaction_queue = []
 
 @app.get("/blockchains")
 async def send_blockchains():
     global blockchains, blockpool
-    import pdb; pdb.set_trace()
     blockchains_dicts_list = [blockchain.to_dict() for blockchain in blockchains]
     blockpool_dict = [block.to_dict() for block in blockpool]
 
