@@ -28,7 +28,6 @@ def create_block() -> Block:
     block.add_transactions(transaction_queue)
     block.mine()
 
-    transaction_queue = []
     return block
 
 def broadcast(block: Block) -> None:
